@@ -12,6 +12,6 @@ namespace Business.Abstract
         /// </summary>
         /// <param name="cartAddDto">cartAddDto</param>
         /// <returns>SaveChangesAsync result</returns>
-        Task<int> Add(CartAddDto cartAddDto);
+        Task<CartResultDto> Add(CartAddDto cartAddDto);
     }
 }

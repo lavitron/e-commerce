@@ -16,17 +16,17 @@ namespace Business.Validation.Cart
                 .LessThan(int.MaxValue).WithMessage("Geçerli bir değer girilmelidir.")
                 .Custom((id, context) =>
                 {
-                    if (id.ToString().Any(p => !char.IsLetter(p)))
+                    if (id.ToString().Any(p => char.IsLetter(p)))
                     {
                         context.AddFailure("Geçerli bir kullanıcı seçilmelidir.");
                     }
                 });
-            RuleFor(p => p.UserId)
+            RuleFor(p => p.CreatedUserId)
               .GreaterThan(0).WithMessage("Geçerli bir kullanıcı seçilmelidir.")
               .LessThan(int.MaxValue).WithMessage("Geçerli bir değer girilmelidir.")
               .Custom((id, context) =>
               {
-                  if (id.ToString().Any(p => !char.IsLetter(p)))
+                  if (id.ToString().Any(p => char.IsLetter(p)))
                   {
                       context.AddFailure("Geçerli bir kullanıcı seçilmelidir.");
                   }
@@ -36,7 +36,7 @@ namespace Business.Validation.Cart
                 .LessThan(int.MaxValue).WithMessage("Geçerli bir değer girilmelidir.")
                 .Custom((id, context) =>
                 {
-                    if (id.ToString().Any(p => !char.IsLetter(p)))
+                    if (id.ToString().Any(p => char.IsLetter(p)))
                     {
                         context.AddFailure("Geçerli bir ürün seçilmelidir.");
                     }
@@ -46,7 +46,7 @@ namespace Business.Validation.Cart
                 .LessThan(1000).WithMessage("Ürün sayısı 1000 adetten fazla seçilmemelidir.")
                   .Custom((id, context) =>
                   {
-                      if (id.ToString().Any(p => !char.IsLetter(p)))
+                      if (id.ToString().Any(p => char.IsLetter(p)))
                       {
                           context.AddFailure("Geçerli bir ürün sayısı seçilmelidir.");
                       }
